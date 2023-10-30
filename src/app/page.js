@@ -7,7 +7,6 @@ import SupplySection from "./component/SupplySection";
 export default function Home() {
   return (
     <div>
-      <Navbar />
       <Hero />
       <FraudSection />
       <SupplySection />

@@ -13,6 +13,14 @@
   background-image: url("/images/bg_rectangle.png");
 }
 
+.footer-bg {
+  background-color: #f6f9ff;
+}
+
+.copyright-bg {
+  background-color: #3450a2;
+}
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
