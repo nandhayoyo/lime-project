@@ -9,6 +9,11 @@
   word-wrap: break-word;
 }
 
+.bg-image {
+  background-image: url("/images/bg_rectangle.png");
+  height: 100% !important;
+}
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
