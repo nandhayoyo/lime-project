@@ -25,7 +25,7 @@ const Hero = () => {
             // onClick={handleClick}
             className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-black-300 dark:focus:ring-primary-900"
           >
-            Hubungi Kami
+            Hubungi Kami?
           </a>
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
