@@ -20,9 +20,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-image bg-center bg-no-repeat bg-cover lg:h-[90vh] h-[90vh]">
+    <section className="bg-image bg-center bg-no-repeat bg-cover lg:h-[90vh] h-[100vh]">
       <div className="grid max-w-screen-xl px-4 py-10 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div className="mr-auto place-self-center lg:col-span-6 mt-16">
+        <div className="mr-auto place-self-center lg:col-span-6 mt-32">
           <h1 className="max-w-2xl mb-4 text-4xl font-normal tracking-tight leading-none md:text-2xl xl:text-3xl text-blue-500 ">
             {t("leadingBrands")}
           </h1>
