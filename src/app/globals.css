@@ -4,7 +4,7 @@
 
 .text-p-hero {
   font-size: 18px !important;
-  font-family: Nunito Sans;
+  font-family: Nunito Sans !important;
   font-weight: 400;
   word-wrap: break-word;
 }
@@ -17,8 +17,23 @@
   background-color: #f6f9ff;
 }
 
+.faq-bg {
+  background-color: #f8f9ff;
+  border-radius: 10px;
+}
+
 .copyright-bg {
   background-color: #3450a2;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.text-FaQ {
+  font-size: 36px;
+  font-weight: 800;
+  word-wrap: break-word;
 }
 
 /* :root {
