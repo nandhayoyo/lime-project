@@ -8,8 +8,11 @@ import verif_logo from "../../../public/Images/ic_verif.png";
 
 import Image from "next/image";
 import { toast } from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   const handleClick = (e) => {
     toast("This feature under maintenance!", {
       icon: "⚠️",
@@ -21,16 +24,15 @@ const Hero = () => {
       <div className="grid max-w-screen-xl px-4 py-10 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-6 mt-16">
           <h1 className="max-w-2xl mb-4 text-4xl font-normal tracking-tight leading-none md:text-2xl xl:text-3xl text-blue-500 ">
-            Leading Brand
+            {t("leadingBrands")}
           </h1>
           <h1 className="max-w-2xl mb-1 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-blue-500 ">
-            Protection Solution
+            {t("protectionSolution")}
           </h1>
           <div className="flex items-center">
             <Image src={verif_ic} width={40} />
             <p className="ml-2 pt-5 font-light text-gray-500 mb-8 lg:mb-8 text-p-hero ">
-              Jaga keaslian produk kamu dengan stiker hologram berteknologi
-              tinggi.
+              {t("heroCaption")}
             </p>
           </div>
           <button
@@ -38,7 +40,7 @@ const Hero = () => {
             onClick={handleClick}
             className="inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-center text-white rounded-md bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-black-300 "
           >
-            <p className="mx-5">Hubungi Kami</p>
+            <p className="mx-5"> {t("contactUs")}</p>
           </button>
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex relative">

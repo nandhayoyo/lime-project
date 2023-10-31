@@ -3,8 +3,10 @@ import Image from "next/image";
 import React from "react";
 import admin_ic from "../../../public/Images/admin_img.png";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const DashboardSection = () => {
+  const { t } = useTranslation();
   const handleClick = (e) => {
     toast("This feature under maintenance!", {
       icon: "⚠️",
@@ -15,10 +17,10 @@ const DashboardSection = () => {
       <div className="grid max-w-screen-xl px-4 py-10 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-5 mt-12">
           <h1 className="max-w-2xl mb-4 text-2xl lg:text-2xl font-light tracking-tight leading-none text-white ">
-            Tertarik dengan teknologi kami?
+            {t("dashboardSubTitle")}
           </h1>
           <h1 className="max-w-2xl mb-6 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-5xl text-white ">
-            Mari kita melihat Dashboard Shieldtag
+            {t("dashboardTitle")}
           </h1>
 
           <a
@@ -26,7 +28,7 @@ const DashboardSection = () => {
             onClick={handleClick}
             className="inline-flex items-center justify-center px-5 py-3 text-base font-bold text-center text-black rounded-lg bg-button-adminSect hover:bg-amber-300 focus:ring-4 focus:ring-black-300 "
           >
-            <p className="mx-5">Jadwalkan Demo</p>
+            <p className="mx-5"> {t("dashboardButton")}</p>
           </a>
         </div>
       </div>

@@ -11,7 +11,8 @@ import Us_ic from "../../../public/Images/united-states-of-america.png";
 
 import { Link, Element } from "react-scroll";
 import toast from "react-hot-toast";
-import { useTranslation } from "../hooks/useTranslations";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../i18n";
 
 const products = [
   {
@@ -130,6 +131,7 @@ const bahasa = [
     name: "US",
     href: "#",
     icon: Us_ic,
+    onClick: () => changeLanguage("en"),
   },
 ];
 
@@ -144,7 +146,17 @@ const linkStyles = {
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { language, changeLanguage, t } = useTranslation("ID");
+  const [activeMenu, setActiveMenu] = useState(null);
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setActiveMenu(null);
+  };
 
   const handleClick = (e) => {
     toast("This feature under maintenance!", {
@@ -384,7 +396,7 @@ const Navbar = () => {
         <div className="hidden lg:flex lg:justify-end mx-2">
           <Popover className="relative bg-white shadow-md hover:bg-slate-200">
             <Popover.Button className="flex py-2 px-4 rounded items-center gap-x-1 text-base font-light leading-6 text-gray-900">
-              {language === "US" ? (
+              {i18n.language === "en" ? (
                 <>
                   <Image src={Us_ic} alt="US" width={20} />
                 </>
@@ -410,9 +422,9 @@ const Navbar = () => {
               <Popover.Panel className="absolute -left-5 top-full z-10 mt-3 w-auto max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4 flex flex-wrap">
                   <button
-                    onClick={() => changeLanguage("US")}
+                    onClick={() => changeLanguage("en")}
                     className={`text-base font-normal py-2 px-4 rounded ${
-                      language === "US"
+                      i18n.language === "en"
                         ? "bg-blue-800 text-white"
                         : "text-gray-900"
                     }`}
@@ -420,9 +432,9 @@ const Navbar = () => {
                     <Image src={Us_ic} alt="US" width={20} />
                   </button>
                   <button
-                    onClick={() => changeLanguage("ID")}
+                    onClick={() => changeLanguage("id")}
                     className={`text-base font-normal py-2 px-4 rounded ${
-                      language === "ID"
+                      i18n.language === "id"
                         ? "bg-blue-800 text-white"
                         : "text-gray-900"
                     }`}
@@ -441,7 +453,7 @@ const Navbar = () => {
         as="div"
         className="lg:hidden"
         open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
+        onClose={closeMobileMenu}
       >
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
@@ -464,8 +476,9 @@ const Navbar = () => {
                 <a
                   href="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
+                  onClick={closeMobileMenu}
                 >
-                  Home
+                  {t("home")}
                 </a>
                 <Link
                   to="fraudSection"
@@ -473,15 +486,19 @@ const Navbar = () => {
                   duration={1000}
                   style={linkStyles}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
+                  onClick={() => {
+                    closeMobileMenu();
+                  }}
                 >
-                  Kenapa Shieldtag?
+                  {t("whyShieldtag")}
                 </Link>
 
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-light leading-7 text-gray-900 hover:bg-gray-50">
-                        Product
+                        {t("product")}
+
                         <ChevronDownIcon
                           className={classNames(
                             open ? "rotate-180" : "",
@@ -496,7 +513,10 @@ const Navbar = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            onClick={handleClick}
+                            onClick={() => {
+                              handleClick();
+                              closeMobileMenu();
+                            }}
                             className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
@@ -511,8 +531,8 @@ const Navbar = () => {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-light leading-7 text-gray-900 hover:bg-gray-50">
-                        Layanan
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-light leading-7 text-gray-900  hover:bg-gray-50">
+                        {t("service")}
                         <ChevronDownIcon
                           className={classNames(
                             open ? "rotate-180" : "",
@@ -527,7 +547,10 @@ const Navbar = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            onClick={handleClick}
+                            onClick={() => {
+                              handleClick();
+                              closeMobileMenu();
+                            }}
                             className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
@@ -543,7 +566,7 @@ const Navbar = () => {
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-light leading-7 text-gray-900 hover:bg-gray-50">
-                        Industri
+                        {t("industri")}
                         <ChevronDownIcon
                           className={classNames(
                             open ? "rotate-180" : "",
@@ -558,7 +581,10 @@ const Navbar = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            onClick={handleClick}
+                            onClick={() => {
+                              handleClick();
+                              closeMobileMenu();
+                            }}
                             className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
@@ -574,7 +600,7 @@ const Navbar = () => {
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-light leading-7 text-gray-900 hover:bg-gray-50">
-                        Tentang Kami
+                        {t("aboutUs")}
                         <ChevronDownIcon
                           className={classNames(
                             open ? "rotate-180" : "",
@@ -589,7 +615,10 @@ const Navbar = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            onClick={handleClick}
+                            onClick={() => {
+                              handleClick();
+                              closeMobileMenu();
+                            }}
                             className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
@@ -606,14 +635,22 @@ const Navbar = () => {
                 onClick={handleClick}
                 className="bg-blue-800 hover:bg-blue-600 text-sm text-white font-normal py-2 px-4 rounded"
               >
-                Hubungi Kami
+                {t("contactUs")}
               </button>
             </div>
             <Disclosure as="div" className="-mx-3">
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-light leading-7 text-gray-900 hover:bg-gray-50">
-                    <Image src={Id_ic} alt="ID" width={20} />
+                  <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-light leading-7 text-gray-900 bg-gray-200 hover:bg-gray-300">
+                    {i18n.language === "en" ? (
+                      <>
+                        <Image src={Us_ic} alt="US" width={20} />
+                      </>
+                    ) : (
+                      <>
+                        <Image src={Id_ic} alt="ID" width={20} />
+                      </>
+                    )}
                     <ChevronDownIcon
                       className={classNames(
                         open ? "rotate-180" : "",
@@ -628,9 +665,17 @@ const Navbar = () => {
                         key={item.icon}
                         as="a"
                         href={item.href}
+                        onClick={() => {
+                          changeLanguage(i18n.language === "en" ? "id" : "en");
+                          closeMobileMenu();
+                        }}
                         className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                       >
-                        <Image src={item.icon} alt={item.name} width={20} />
+                        {i18n.language === "en" ? (
+                          <Image src={Id_ic} alt="ID" width={20} />
+                        ) : (
+                          <Image src={Us_ic} alt="US" width={20} />
+                        )}
                       </Disclosure.Button>
                     ))}
                   </Disclosure.Panel>

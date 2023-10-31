@@ -3,8 +3,11 @@ import Image from "next/image";
 import React from "react";
 import supply_ic from "../../../public/Images/supply_img.png";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const SupplySection = () => {
+  const { t } = useTranslation();
+
   const handleClick = (e) => {
     toast("This feature under maintenance!", {
       icon: "⚠️",
@@ -19,30 +22,23 @@ const SupplySection = () => {
 
         <div className="mr-auto place-self-center lg:col-span-6">
           <h1 className="max-w-2xl mb-4 text-base font-normal tracking-tight leading-none  text-blue-800 ">
-            Data Produk
+            {t("subTitleData")}
           </h1>
           <h1 className="max-w-2xl mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-3xl text-black ">
-            Supply-chain Visibility
+            {t("titleData")}
           </h1>
           <p className="max-w-2xl mb-6 font-light text-black lg:mb-8 md:text-lg lg:text-xl ">
-            Di dalam bisnis manufaktur, kita menciptakan suatu produk untuk kita
-            jual kepada masyarakat, baik jual secara online, agent, reseller,
-            dan berbagai cara lainnya. Namun, kita tidak tau dimana produk kita
-            telah terjual di pasar. Kita hanya tau angka penjualan tapi hampir
-            tidak mungkin untuk mengetahui dimana produk itu telah terjual.
+            {t("captionData1")}
             <br /> <br />
-            Shieldtag membuat hal tersebut dari tidak mungkin menjadi bisa dan
-            mudah. Melalui setiap sticker hologram berteknologi dari Shieldtag,
-            anda dapat melacak pendistribusian produk anda di pasar.
-            Barang-barang tersebut dapat di lacak dengan akurat dan aktual juga
-            semua data yang tersaji secara real-time.
+            {t("captionData2")}
           </p>
           <a
             href="#"
             onClick={handleClick}
             className="inline-flex items-center justify-center text-base font-semibold text-center text-blue-600 rounded-lg  "
           >
-            Pelajari Distribution Tracking System
+            {t("buttonData")}
+
             <svg
               className="w-5 h-5 ml-2 -mr-1"
               fill="currentColor"
