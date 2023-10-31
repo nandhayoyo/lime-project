@@ -93,7 +93,7 @@ const Footer = () => {
                   alt="logo"
                 />
               </a>
-              <a href="/">
+              <a href="https://gmail.com/" target="_blank">
                 <Image width={40} className="mx-2" src={ic_mail} alt="logo" />
               </a>
               <a href="https://whatsapp.com/" target="_blank">

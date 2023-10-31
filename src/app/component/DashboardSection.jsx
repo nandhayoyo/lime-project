@@ -1,8 +1,15 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import admin_ic from "../../../public/Images/admin_img.png";
+import toast from "react-hot-toast";
 
 const DashboardSection = () => {
+  const handleClick = (e) => {
+    toast("This feature under maintenance!", {
+      icon: "⚠️",
+    });
+  };
   return (
     <section className="bg-adminSection bg-center bg-no-repeat bg-cover  lg:h-[70vh] sm:h-[90vh] mb-10">
       <div className="grid max-w-screen-xl px-4 py-10 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
@@ -16,7 +23,7 @@ const DashboardSection = () => {
 
           <a
             href="#"
-            // onClick={handleClick}
+            onClick={handleClick}
             className="inline-flex items-center justify-center px-5 py-3 text-base font-bold text-center text-black rounded-lg bg-button-adminSect hover:bg-amber-300 focus:ring-4 focus:ring-black-300 "
           >
             <p className="mx-5">Jadwalkan Demo</p>
@@ -27,7 +34,7 @@ const DashboardSection = () => {
         <Image
           src={admin_ic}
           alt="mockup"
-          width={900} // Mengubah lebar gambar
+          width={900}
           style={{
             position: "relative",
             paddingLeft: "20px",

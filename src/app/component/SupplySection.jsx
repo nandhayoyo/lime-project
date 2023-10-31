@@ -1,8 +1,15 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import supply_ic from "../../../public/Images/supply_img.png";
+import toast from "react-hot-toast";
 
 const SupplySection = () => {
+  const handleClick = (e) => {
+    toast("This feature under maintenance!", {
+      icon: "⚠️",
+    });
+  };
   return (
     <section className="lg:mt-20 lg:mb-20 bg-white ">
       <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
@@ -32,7 +39,7 @@ const SupplySection = () => {
           </p>
           <a
             href="#"
-            //   onClick={handleClick}
+            onClick={handleClick}
             className="inline-flex items-center justify-center text-base font-semibold text-center text-blue-600 rounded-lg  "
           >
             Pelajari Distribution Tracking System

@@ -10,6 +10,7 @@ import Id_ic from "../../../public/Images/indonesia.png";
 import Us_ic from "../../../public/Images/united-states-of-america.png";
 
 import { Link, Element } from "react-scroll";
+import toast from "react-hot-toast";
 
 const products = [
   {
@@ -142,6 +143,11 @@ const linkStyles = {
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const handleClick = (e) => {
+    toast("This feature under maintenance!", {
+      icon: "⚠️",
+    });
+  };
 
   return (
     <header className="bg-white">
@@ -150,8 +156,7 @@ const Navbar = () => {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+          <a href="/" className="-m-1.5 p-1.5">
             <Image className="h-8 w-auto" src={Nav_ic} alt="shieldtag.co" />
           </a>
         </div>
@@ -211,6 +216,7 @@ const Navbar = () => {
                       <div className="flex-auto">
                         <a
                           href={item.href}
+                          onClick={handleClick}
                           className="block font-light text-gray-900"
                         >
                           {item.name}
@@ -256,6 +262,7 @@ const Navbar = () => {
                       <div className="flex-auto">
                         <a
                           href={item.href}
+                          onClick={handleClick}
                           className="block font-light text-gray-900"
                         >
                           {item.name}
@@ -301,6 +308,7 @@ const Navbar = () => {
                       <div className="flex-auto">
                         <a
                           href={item.href}
+                          onClick={handleClick}
                           className="block font-light text-gray-900"
                         >
                           {item.name}
@@ -346,6 +354,7 @@ const Navbar = () => {
                       <div className="flex-auto">
                         <a
                           href={item.href}
+                          onClick={handleClick}
                           className="block font-light text-gray-900"
                         >
                           {item.name}
@@ -360,7 +369,10 @@ const Navbar = () => {
           </Popover>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <button className="bg-blue-800 hover:bg-blue-600 text-sm text-white font-normal py-2 px-4 rounded-md">
+          <button
+            onClick={handleClick}
+            className="bg-blue-800 hover:bg-blue-600 text-sm text-white font-normal py-2 px-4 rounded-md"
+          >
             Hubungi Kami
           </button>
         </div>
@@ -404,7 +416,7 @@ const Navbar = () => {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <Image className="h-8 w-auto" src={Nav_ic} alt="" />
             </a>
             <button
@@ -454,6 +466,7 @@ const Navbar = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
+                            onClick={handleClick}
                             className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
@@ -484,6 +497,7 @@ const Navbar = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
+                            onClick={handleClick}
                             className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
@@ -514,6 +528,7 @@ const Navbar = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
+                            onClick={handleClick}
                             className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
@@ -544,6 +559,7 @@ const Navbar = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
+                            onClick={handleClick}
                             className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
@@ -556,7 +572,10 @@ const Navbar = () => {
               </div>
             </div>
             <div className="py-6">
-              <button className="bg-blue-800 hover:bg-blue-600 text-sm text-white font-normal py-2 px-4 rounded">
+              <button
+                onClick={handleClick}
+                className="bg-blue-800 hover:bg-blue-600 text-sm text-white font-normal py-2 px-4 rounded"
+              >
                 Hubungi Kami
               </button>
             </div>
