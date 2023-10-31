@@ -6,7 +6,7 @@ import ic_download from "../../../public/Images/download_ic.png";
 
 const Footer = () => {
   return (
-    <footer className="footer-bg">
+    <footer className="footer-bg mt-72">
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">

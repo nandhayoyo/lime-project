@@ -1,9 +1,8 @@
-import Image from "next/image";
-import Navbar from "./component/Navbar";
 import Hero from "./component/Hero";
 import FraudSection from "./component/FraudSection";
 import SupplySection from "./component/SupplySection";
 import FaQ from "./component/FaQ";
+import DashboardSection from "./component/DashboardSection";
 
 export default function Home() {
   return (
@@ -11,7 +10,8 @@ export default function Home() {
       <Hero />
       <FraudSection />
       <SupplySection />
-      <FaQ/>
+      <FaQ />
+      <DashboardSection />
     </div>
   );
 }

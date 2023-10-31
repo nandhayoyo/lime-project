@@ -13,6 +13,14 @@
   background-image: url("/images/bg_rectangle.png");
 }
 
+.bg-adminSection {
+  background-image: url("/images/admin_bg.png");
+}
+
+.bg-button-adminSect {
+  background-color: #fbbc05;
+}
+
 .footer-bg {
   background-color: #f6f9ff;
 }
