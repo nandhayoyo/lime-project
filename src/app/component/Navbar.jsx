@@ -11,6 +11,7 @@ import Us_ic from "../../../public/Images/united-states-of-america.png";
 
 import { Link, Element } from "react-scroll";
 import toast from "react-hot-toast";
+import { useTranslation } from "../hooks/useTranslations";
 
 const products = [
   {
@@ -143,6 +144,8 @@ const linkStyles = {
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, changeLanguage, t } = useTranslation("ID");
+
   const handleClick = (e) => {
     toast("This feature under maintenance!", {
       icon: "⚠️",
@@ -172,7 +175,7 @@ const Navbar = () => {
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-10">
           <a href="/" className="text-base font-light leading-6 text-gray-900">
-            Home
+            {t("home")}
           </a>
           <Link
             to="fraudSection"
@@ -181,7 +184,7 @@ const Navbar = () => {
             style={linkStyles}
             className="text-base font-light leading-6 text-gray-900"
           >
-            Kenapa Shieldtag?
+            {t("whyShieldtag")}
           </Link>
 
           {/* Produk */}
@@ -190,7 +193,8 @@ const Navbar = () => {
               className="flex items-center gap-x-1 text-base font-light leading-6 text-gray-900"
               style={{ outline: "none" }}
             >
-              Produk
+              {t("product")}
+
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
@@ -236,7 +240,8 @@ const Navbar = () => {
               className="flex items-center gap-x-1 text-base font-light leading-6 text-gray-900"
               style={{ outline: "none" }}
             >
-              Layanan
+              {t("service")}
+
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
@@ -282,7 +287,7 @@ const Navbar = () => {
               className="flex items-center gap-x-1 text-base font-light leading-6 text-gray-900"
               style={{ outline: "none" }}
             >
-              Industri
+              {t("industri")}
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
@@ -328,7 +333,7 @@ const Navbar = () => {
               className="flex items-center gap-x-1 text-base font-light leading-6 "
               style={{ outline: "none" }}
             >
-              Tentang Kami
+              {t("aboutUs")}
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
@@ -373,13 +378,21 @@ const Navbar = () => {
             onClick={handleClick}
             className="bg-blue-800 hover:bg-blue-600 text-sm text-white font-normal py-2 px-4 rounded-md"
           >
-            Hubungi Kami
+            {t("contactUs")}
           </button>
         </div>
         <div className="hidden lg:flex lg:justify-end mx-2">
           <Popover className="relative bg-white shadow-md hover:bg-slate-200">
             <Popover.Button className="flex py-2 px-4 rounded items-center gap-x-1 text-base font-light leading-6 text-gray-900">
-              <Image src={Id_ic} alt="ID" width={20} />
+              {language === "US" ? (
+                <>
+                  <Image src={Us_ic} alt="US" width={20} />
+                </>
+              ) : (
+                <>
+                  <Image src={Id_ic} alt="ID" width={20} />
+                </>
+              )}
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
@@ -396,8 +409,25 @@ const Navbar = () => {
             >
               <Popover.Panel className="absolute -left-5 top-full z-10 mt-3 w-auto max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4 flex flex-wrap">
-                  <button className=" text-base text-white font-normal py-2 px-4 rounded">
-                    <Image src={Us_ic} alt="ID" width={20} />
+                  <button
+                    onClick={() => changeLanguage("US")}
+                    className={`text-base font-normal py-2 px-4 rounded ${
+                      language === "US"
+                        ? "bg-blue-800 text-white"
+                        : "text-gray-900"
+                    }`}
+                  >
+                    <Image src={Us_ic} alt="US" width={20} />
+                  </button>
+                  <button
+                    onClick={() => changeLanguage("ID")}
+                    className={`text-base font-normal py-2 px-4 rounded ${
+                      language === "ID"
+                        ? "bg-blue-800 text-white"
+                        : "text-gray-900"
+                    }`}
+                  >
+                    <Image src={Id_ic} alt="ID" width={20} />
                   </button>
                 </div>
               </Popover.Panel>
