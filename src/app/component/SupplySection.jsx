@@ -4,20 +4,20 @@ import supply_ic from "../../../public/Images/supply_img.png";
 
 const SupplySection = () => {
   return (
-    <section className="mt-20 bg-white dark:bg-gray-900">
+    <section className="lg:mt-20 lg:mb-20 bg-white ">
       <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div className="hidden mr-10 lg:mt-0 lg:col-span-5 lg:flex">
+        <div className="hidden mr-10 lg:mt-0 lg:col-span-6 lg:flex">
           <Image src={supply_ic} alt="mockup" />
         </div>
 
-        <div className="mr-auto place-self-center lg:col-span-7">
-          <h1 className="max-w-2xl mb-4 text-xl font-normal tracking-tight leading-none  text-blue-800 dark:text-white">
+        <div className="mr-auto place-self-center lg:col-span-6">
+          <h1 className="max-w-2xl mb-4 text-base font-normal tracking-tight leading-none  text-blue-800 ">
             Data Produk
           </h1>
-          <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-black dark:text-white">
+          <h1 className="max-w-2xl mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-3xl text-black ">
             Supply-chain Visibility
           </h1>
-          <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+          <p className="max-w-2xl mb-6 font-light text-black lg:mb-8 md:text-lg lg:text-xl ">
             Di dalam bisnis manufaktur, kita menciptakan suatu produk untuk kita
             jual kepada masyarakat, baik jual secara online, agent, reseller,
             dan berbagai cara lainnya. Namun, kita tidak tau dimana produk kita
@@ -33,7 +33,7 @@ const SupplySection = () => {
           <a
             href="#"
             //   onClick={handleClick}
-            className="inline-flex items-center justify-center text-base font-medium text-center text-blue-600 rounded-lg  dark:focus:ring-primary-900"
+            className="inline-flex items-center justify-center text-base font-semibold text-center text-blue-600 rounded-lg  "
           >
             Pelajari Distribution Tracking System
             <svg
@@ -43,9 +43,9 @@ const SupplySection = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
           </a>

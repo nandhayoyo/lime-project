@@ -6,6 +6,10 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import Nav_ic from "../../../public/Images/Shieldtag Logo.png";
+import Id_ic from "../../../public/Images/indonesia.png";
+import Us_ic from "../../../public/Images/united-states-of-america.png";
+
+import { Link, Element } from "react-scroll";
 
 const products = [
   {
@@ -119,9 +123,22 @@ const tentangkami = [
   },
 ];
 
+const bahasa = [
+  {
+    name: "US",
+    href: "#",
+    icon: Us_ic,
+  },
+];
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+
+const linkStyles = {
+  cursor: "pointer",
+  textDecoration: "none",
+};
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -148,17 +165,26 @@ const Navbar = () => {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+        <Popover.Group className="hidden lg:flex lg:gap-x-10">
+          <a href="/" className="text-base font-light leading-6 text-gray-900">
             Home
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            to="fraudSection"
+            smooth={true}
+            duration={1000}
+            style={linkStyles}
+            className="text-base font-light leading-6 text-gray-900"
+          >
             Kenapa Shieldtag?
-          </a>
+          </Link>
 
           {/* Produk */}
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <Popover.Button
+              className="flex items-center gap-x-1 text-base font-light leading-6 text-gray-900"
+              style={{ outline: "none" }}
+            >
               Produk
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
@@ -180,12 +206,12 @@ const Navbar = () => {
                   {products.map((item) => (
                     <div
                       key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-base leading-6 hover:bg-gray-50"
                     >
                       <div className="flex-auto">
                         <a
                           href={item.href}
-                          className="block font-semibold text-gray-900"
+                          className="block font-light text-gray-900"
                         >
                           {item.name}
                           <span className="absolute inset-0" />
@@ -200,7 +226,10 @@ const Navbar = () => {
 
           {/* Layanan  */}
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <Popover.Button
+              className="flex items-center gap-x-1 text-base font-light leading-6 text-gray-900"
+              style={{ outline: "none" }}
+            >
               Layanan
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
@@ -222,12 +251,12 @@ const Navbar = () => {
                   {layanan.map((item) => (
                     <div
                       key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-base leading-6 hover:bg-gray-50"
                     >
                       <div className="flex-auto">
                         <a
                           href={item.href}
-                          className="block font-semibold text-gray-900"
+                          className="block font-light text-gray-900"
                         >
                           {item.name}
                           <span className="absolute inset-0" />
@@ -242,7 +271,10 @@ const Navbar = () => {
 
           {/* Industri  */}
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <Popover.Button
+              className="flex items-center gap-x-1 text-base font-light leading-6 text-gray-900"
+              style={{ outline: "none" }}
+            >
               Industri
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
@@ -264,12 +296,12 @@ const Navbar = () => {
                   {industri.map((item) => (
                     <div
                       key={item.name}
-                      className="group relative flex items-center w-full gap-x-6 rounded-lg p-2 text-sm leading-6 hover:bg-gray-50"
+                      className="group relative flex items-center w-full gap-x-6 rounded-lg p-2 text-base leading-6 hover:bg-gray-50"
                     >
                       <div className="flex-auto">
                         <a
                           href={item.href}
-                          className="block font-semibold text-gray-900"
+                          className="block font-light text-gray-900"
                         >
                           {item.name}
                           <span className="absolute inset-0" />
@@ -284,7 +316,10 @@ const Navbar = () => {
 
           {/* Tentang Kami  */}
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <Popover.Button
+              className="flex items-center gap-x-1 text-base font-light leading-6 "
+              style={{ outline: "none" }}
+            >
               Tentang Kami
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
@@ -306,12 +341,12 @@ const Navbar = () => {
                   {tentangkami.map((item) => (
                     <div
                       key={item.name}
-                      className="group relative flex items-center w-full gap-x-6 rounded-lg p-2 text-sm leading-6 hover:bg-gray-50"
+                      className="group relative flex items-center w-full gap-x-6 rounded-lg p-2 text-base leading-6 hover:bg-gray-50"
                     >
                       <div className="flex-auto">
                         <a
                           href={item.href}
-                          className="block font-semibold text-gray-900"
+                          className="block font-light text-gray-900"
                         >
                           {item.name}
                           <span className="absolute inset-0" />
@@ -325,9 +360,37 @@ const Navbar = () => {
           </Popover>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <button class="bg-blue-500 hover:bg-blue-600 text-sm text-white font-normal py-2 px-4 rounded">
+          <button className="bg-blue-800 hover:bg-blue-600 text-sm text-white font-normal py-2 px-4 rounded-md">
             Hubungi Kami
           </button>
+        </div>
+        <div className="hidden lg:flex lg:justify-end mx-2">
+          <Popover className="relative bg-white shadow-md hover:bg-slate-200">
+            <Popover.Button className="flex py-2 px-4 rounded items-center gap-x-1 text-base font-light leading-6 text-gray-900">
+              <Image src={Id_ic} alt="ID" width={20} />
+              <ChevronDownIcon
+                className="h-5 w-5 flex-none text-gray-400"
+                aria-hidden="true"
+              />
+            </Popover.Button>
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-1"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-1"
+            >
+              <Popover.Panel className="absolute -left-5 top-full z-10 mt-3 w-auto max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                <div className="p-4 flex flex-wrap">
+                  <button className=" text-base text-white font-normal py-2 px-4 rounded">
+                    <Image src={Us_ic} alt="ID" width={20} />
+                  </button>
+                </div>
+              </Popover.Panel>
+            </Transition>
+          </Popover>
         </div>
       </nav>
 
@@ -357,21 +420,25 @@ const Navbar = () => {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  href="/"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Home
                 </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                <Link
+                  to="fraudSection"
+                  smooth={true}
+                  duration={1000}
+                  style={linkStyles}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Kenapa Shieldtag?
-                </a>
+                </Link>
+
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-light leading-7 text-gray-900 hover:bg-gray-50">
                         Product
                         <ChevronDownIcon
                           className={classNames(
@@ -387,7 +454,7 @@ const Navbar = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -401,7 +468,7 @@ const Navbar = () => {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-light leading-7 text-gray-900 hover:bg-gray-50">
                         Layanan
                         <ChevronDownIcon
                           className={classNames(
@@ -417,7 +484,7 @@ const Navbar = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -431,7 +498,7 @@ const Navbar = () => {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-light leading-7 text-gray-900 hover:bg-gray-50">
                         Industri
                         <ChevronDownIcon
                           className={classNames(
@@ -447,7 +514,7 @@ const Navbar = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -461,7 +528,7 @@ const Navbar = () => {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-light leading-7 text-gray-900 hover:bg-gray-50">
                         Tentang Kami
                         <ChevronDownIcon
                           className={classNames(
@@ -477,7 +544,7 @@ const Navbar = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -488,6 +555,39 @@ const Navbar = () => {
                 </Disclosure>
               </div>
             </div>
+            <div className="py-6">
+              <button className="bg-blue-800 hover:bg-blue-600 text-sm text-white font-normal py-2 px-4 rounded">
+                Hubungi Kami
+              </button>
+            </div>
+            <Disclosure as="div" className="-mx-3">
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-light leading-7 text-gray-900 hover:bg-gray-50">
+                    <Image src={Id_ic} alt="ID" width={20} />
+                    <ChevronDownIcon
+                      className={classNames(
+                        open ? "rotate-180" : "",
+                        "h-5 w-5 flex-none"
+                      )}
+                      aria-hidden="true"
+                    />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="mt-2 space-y-2">
+                    {[...bahasa].map((item) => (
+                      <Disclosure.Button
+                        key={item.icon}
+                        as="a"
+                        href={item.href}
+                        className="block rounded-lg py-2 pl-6 pr-3 text-base font-light leading-7 text-gray-900 hover:bg-gray-50"
+                      >
+                        <Image src={item.icon} alt={item.name} width={20} />
+                      </Disclosure.Button>
+                    ))}
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
           </div>
         </Dialog.Panel>
       </Dialog>

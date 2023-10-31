@@ -21,23 +21,23 @@ const FaQ = () => {
         </div>
       </section>
       <section className="grid max-w-screen-xl px-4 py-8 mx-auto">
-        <div className="py-5 px-5 faq-bg mb-5">
-          <h1 className="font-bold">Apa itu Shieldtag?</h1>
+        <div className="py-5 px-8 faq-bg mb-5">
+          <h1 className="font-bold text-xl">Apa itu Shieldtag?</h1>
           <p>
             Shieldtag adalah hologram sticker berteknologi yang digunakan untuk
             memastikan keaslian sebuah produk.
           </p>
         </div>
-        <div className="py-5 px-5 faq-bg mb-5">
-          <h1 className="font-bold">Bagaimana cara penggunaannya?</h1>
+        <div className="py-5 px-8 faq-bg mb-5">
+          <h1 className="font-bold text-xl">Bagaimana cara penggunaannya?</h1>
           <p>
             Download aplikasi Shieldtag, lalu scan QR code dari hologram
             Shieldtag, lalu masukan PIN code yang unik di QR code kamu, dan
             pastikan keaslian produk kamu.
           </p>
         </div>
-        <div className="py-5 px-5 faq-bg mb-5">
-          <h1 className="font-bold">
+        <div className="py-5 px-8 faq-bg mb-5">
+          <h1 className="font-bold text-xl">
             Brand apa aja yg sudah menggunakan Shieldtag?
           </h1>
           <p>
@@ -45,8 +45,8 @@ const FaQ = () => {
             ternama yang telah menggunakan Shieldtag.
           </p>
         </div>
-        <div className="py-5 px-5 faq-bg mb-5">
-          <h1 className="font-bold">
+        <div className="py-5 px-8 faq-bg mb-5">
+          <h1 className="font-bold text-xl">
             Shieldtag adalah perusahaan yang berasal darimana?
           </h1>
           <p>
@@ -54,8 +54,8 @@ const FaQ = () => {
             Karya Generasi Biru dan telah beroperasi dari tahun 2020.
           </p>
         </div>
-        <div className="py-5 px-5 faq-bg mb-5">
-          <h1 className="font-bold">
+        <div className="py-5 px-8 faq-bg mb-5">
+          <h1 className="font-bold text-xl">
             Bagaimana cara mendapatkan aplikasi Shieldtag?
           </h1>
           <p>
