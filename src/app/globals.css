@@ -14,7 +14,7 @@
 }
 
 .bg-adminSection {
-  background-image: url("/images/admin_bg.png");
+  background-image: url("../../public/Images/admin_bg.png");
 }
 
 .bg-button-adminSect {
