@@ -10,7 +10,7 @@
 }
 
 .bg-image {
-  background-image: url("/images/bg_rectangle.png");
+  background-image: url("../../public/Images/bg_rectangle.png");
 }
 
 .bg-adminSection {

@@ -73,7 +73,7 @@ const Hero = () => {
             style={{
               width: "150px",
               position: "relative",
-              bottom: "485px",
+              bottom: "440px",
               left: "100px",
             }}
           />
